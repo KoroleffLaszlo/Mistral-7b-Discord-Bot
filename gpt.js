@@ -12,10 +12,10 @@ async function Chat(user_messages){
         { role : 'user', content: user_messages  } 
     ], { verbose : true });
 
-    console.log(`\n\nUSER_MESSAGE: ${user_messages} \n\n ------`);
+    console.log(`\n\nUSER_MESSAGE: '${user_messages}' \n\n ------`);
     console.log(response.choices[0].message.content);
 
-    model.dispose()
+    model.dispose();
     return new Promise(resolve => setTimeout(() => resolve(response.choices[0].message.content), 1000));
 }
 
