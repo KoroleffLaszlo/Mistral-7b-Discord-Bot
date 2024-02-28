@@ -8,7 +8,7 @@ class Bot{
         this.channel = channel;
         this.bot = new Client({
             intents: [
-                'GuildMembers', 'Guilds', 'GuildMessages'
+                'GuildMembers', 'Guilds', 'GuildMessages', 'MessageContent'
             ]
         });
     }
@@ -25,7 +25,7 @@ class Bot{
                 message.channel.sendTyping();
                 
                 let response = await Chat(message.content);
-                console.log(`\n\nTHE USER HAS SAID: \n ${message.content}\n\n ---------`);
+
                 message.reply(response);
 
             }catch(err){
